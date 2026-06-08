@@ -26,73 +26,90 @@ HCI EduQuiz là một ứng dụng Web trắc nghiệm offline (không cần má
 
 ---
 
-## 🛠️ Hướng dẫn cài đặt, vận hành và chia sẻ cho bạn bè
+# HCI EduQuiz - Ứng dụng Ôn thi Trắc nghiệm Tương tác Người - Máy
 
-Dự án này được tối ưu hóa để có thể chạy cực kỳ linh hoạt. Dưới đây là hướng dẫn chi tiết dành cho cả bạn bè của bạn (không biết gì về lập trình) và nhà phát triển:
+HCI EduQuiz là một ứng dụng Web trắc nghiệm offline trực quan và hiện đại, được thiết kế đặc biệt để giúp bạn ôn luyện thi trắc nghiệm môn **Tương tác Người - Máy (HCI - Human-Computer Interaction)** với bộ đề cương mặc định gồm **688 câu hỏi trắc nghiệm** chia làm 4 chương.
 
----
-
-### 🌟 DÀNH CHO BẠN BÈ (Không cần cài đặt, không cần biết lập trình)
-
-Nếu bạn muốn chia sẻ ứng dụng này cho bạn bè học cùng mà họ không biết lập trình hay chạy dòng lệnh, bạn có hai cách cực kỳ đơn giản sau:
-
-#### Cách 1: Chạy online qua GitHub Pages (KHUYÊN DÙNG - Đơn giản nhất)
-Bạn có thể tự kích hoạt tính năng chạy online miễn phí của GitHub để gửi đường link web cho bạn bè mở trên điện thoại hoặc máy tính:
-1. Trên trang kho lưu trữ GitHub của bạn (`Eduquiz_doc`), bấm vào mục **Settings** (Cài đặt) ở trên cùng.
-2. Tại danh sách bên trái, chọn mục **Pages**.
-3. Tại phần **Build and deployment** -> mục **Branch**, bạn chuyển từ `None` sang **`main`** (thư mục `/ (root)` giữ nguyên) rồi bấm **Save**.
-4. Chờ khoảng 1 - 2 phút, trang sẽ hiện ra đường link web hoạt động của bạn dạng: `https://ten-tai-khoan.github.io/Eduquiz_doc/`.
-5. Bạn chỉ cần gửi đường link này cho bạn bè. Họ có thể click mở học ôn thi ngay lập tức trên mọi thiết bị.
-
-#### Cách 2: Đóng gói gửi file chạy Offline
-Nếu bạn muốn gửi trọn bộ phần mềm chạy offline trực tiếp trên máy tính của bạn bè:
-1. Bạn chạy lệnh build trên máy của bạn (Xem phần *Dành cho nhà phát triển* ở dưới).
-2. Nén thư mục `dist/` vừa sinh ra thành file `.zip` và gửi cho bạn bè.
-3. Bạn bè giải nén ra máy tính của họ.
-4. Để tránh các lỗi bảo mật về CORS của một số trình duyệt khi mở file cục bộ, họ chỉ cần:
-   * **Cách đơn giản**: Cài đặt extension **Live Server** trong VS Code và bấm *Go Live*.
-   * **Hoặc**: Mở trực tiếp file `index.html` trong thư mục `dist` bằng trình duyệt Firefox (Firefox hỗ trợ mở module trực tiếp từ file:// mà không bị chặn bảo mật như Chrome/Safari).
+Ngoài ra, dự án được tích hợp sẵn bộ nạp đề cương thông minh từ file `.docx`. Bạn có thể dùng chính mã nguồn này để nạp đề cương của các môn học khác để tự luyện tập.
 
 ---
 
-### 💻 DÀNH CHO NHÀ PHÁT TRIỂN (Chạy code và chỉnh sửa dưới local)
+## ✨ Các tính năng chính trong mã nguồn
 
-#### Yêu cầu hệ thống
-* Máy tính đã cài đặt **Node.js** (Khuyến nghị phiên bản 18 trở lên).
+1. **Luyện tập theo chương (Study Mode)**: Click chọn và xem ngay kết quả đúng/sai lập tức, hiển thị hộp giải thích chi tiết.
+2. **🧠 Thẻ liên tưởng ghi nhớ nhanh (Keyword Association)**: Tự động trích xuất cặp từ khóa chính giữa câu hỏi và đáp án đúng, giúp bạn nhớ nhanh đáp án trắc nghiệm chỉ trong vài giây.
+3. **⏱️ Thi thử tổng hợp (Mock Exam)**: Đề thi ngẫu nhiên 40 câu trắc nghiệm từ tất cả các chương với đồng hồ đếm ngược 40 phút. Tự động chấm điểm và tổng hợp kết quả chi tiết sau khi nộp bài.
+4. **📌 Đánh dấu & Luyện câu sai**:
+   * Lưu lại các câu hỏi khó bằng nút **Bookmark** để ôn tập riêng.
+   * Chức năng luyện tập lại các câu đã làm sai gần đây để cải thiện kiến thức.
+5. **⌨️ Phím tắt tiện lợi cho Power-user**:
+   * Phím `Mũi tên Trái / Phải`: Chuyển lùi / chuyển tiến câu hỏi.
+   * Phím `A, B, C, D` hoặc `1, 2, 3, 4`: Chọn nhanh phương án trả lời.
+   * Phím `F`: Bật/Tắt đánh dấu Bookmark câu hỏi hiện tại.
+6. **🔄 Làm lại & Reset linh hoạt**: Hỗ trợ reset làm lại từng câu, làm lại bộ đề hiện tại hoặc xóa tiến trình của riêng từng chương.
+7. **📂 Bộ nạp đề cương môn khác (Client-side DOCX Importer)**: Đọc file `.docx` trực tiếp trên trình duyệt bằng `JSZip`, tự động quét đáp án chữ màu đỏ và chuyển thành bộ đề trắc nghiệm mới trên giao diện.
 
-#### Bước 1: Cài đặt các thư viện (Dependencies)
-Mở terminal tại thư mục dự án (`eduquiz/`) và chạy lệnh sau:
-```bash
-npm install
-```
+---
 
-#### Bước 2: Chạy ứng dụng ở chế độ phát triển (Development)
-Khởi động máy chủ xem trước lập trình:
+## 🛠️ Hướng dẫn cài đặt và chạy mã nguồn trên máy tính (Local)
+
+Dành cho các bạn nhận được mã nguồn và muốn tự chạy chương trình trên máy cá nhân:
+
+### Bước 1: Cài đặt môi trường chạy (Node.js)
+Để chạy được mã nguồn của dự án này, máy tính của bạn cần cài đặt **Node.js**:
+* Truy cập trang chủ: [https://nodejs.org/](https://nodejs.org/)
+* Tải xuống và cài đặt phiên bản khuyến nghị **LTS** (thường là bản dành cho số đông người dùng). Bấm Next và cài đặt như phần mềm thông thường.
+
+### Bước 2: Cài đặt các thư viện bổ trợ (Dependencies)
+1. Mở ứng dụng **Terminal** (trên máy Mac) hoặc **Command Prompt / PowerShell** (trên Windows).
+2. Di chuyển vào thư mục dự án `eduquiz` (hoặc mở thư mục này bằng VS Code rồi mở Terminal tích hợp lên).
+3. Chạy lệnh cài đặt sau:
+   ```bash
+   npm install
+   ```
+   *(Lệnh này sẽ tự động tải thư viện xử lý file zip `jszip` và công cụ đóng gói `vite` về máy).*
+
+### Bước 3: Khởi chạy ứng dụng ôn tập
+Sau khi cài đặt xong, bạn chạy lệnh sau để chạy ứng dụng:
 ```bash
 npm run dev
 ```
-Mở liên kết cục bộ hiển thị trên terminal (ví dụ: `http://localhost:5173`) để trải nghiệm ứng dụng.
+Sau khi chạy thành công, Terminal sẽ hiện ra đường link chạy thử cục bộ như sau:
+```text
+  ➜  Local:   http://localhost:5173/
+```
+* **Cách mở**: Bạn chỉ cần click chuột vào đường link đó hoặc copy dán vào trình duyệt web (Chrome, Edge, Cốc Cốc...) để bắt đầu học.
 
-#### Bước 3: Đóng gói dự án (Build Production)
-Tạo ra thư mục đóng gói `dist/` tối ưu hóa:
+### Bước 4: Đóng gói sản phẩm (Tùy chọn)
+Nếu muốn đóng gói mã nguồn thành một thư mục web tĩnh siêu nhẹ để mở offline nhanh hơn mà không cần chạy server Node.js:
 ```bash
 npm run build
 ```
+Thư mục `dist/` sẽ được tạo ra, bạn chỉ cần mở file `index.html` trong đó bằng trình duyệt Firefox để học offline bình thường.
 
 ---
 
+## 📂 Tìm hiểu cấu trúc mã nguồn dự án
+
+Dự án sử dụng kiến trúc Web tối giản nhưng hiệu quả cao. Bạn có thể mở các file sau để xem xét và chỉnh sửa:
+* [index.html](file:///Users/truongnd/Documents/Learn/eduquiz/index.html): File cấu trúc giao diện chính của ứng dụng web.
+* [src/app.js](file:///Users/truongnd/Documents/Learn/eduquiz/src/app.js): File điều khiển toàn bộ logic hoạt động, phím tắt, bộ đếm thời gian, nạp file `.docx` và lưu lịch sử học tập.
+* [src/style.css](file:///Users/truongnd/Documents/Learn/eduquiz/src/style.css): File định nghĩa giao diện (Dark/Light mode, hiệu ứng mượt mà, màu sắc, font chữ).
+* [src/questions.js](file:///Users/truongnd/Documents/Learn/eduquiz/src/questions.js): Chứa dữ liệu mảng JavaScript của 688 câu hỏi trắc nghiệm mặc định.
+* [questions.json](file:///Users/truongnd/Documents/Learn/eduquiz/questions.json): Dạng file JSON thuần túy dùng để dễ dàng chia sẻ hoặc gửi vào các chatbot AI (như Gemini) để tra cứu đáp án.
+
 ---
 
-## 📝 Hướng dẫn chuẩn bị file `.docx` để nạp đề cương môn học khác
+## 📝 Định dạng file `.docx` yêu cầu khi nạp môn học mới
 
-Để nạp thành công file đề cương của các môn học khác vào phần mềm qua nút **"Nạp Đề Cương Mới (.docx)"**, file Word của anh cần tuân thủ đúng cấu trúc định dạng sau:
+Để bộ nạp tự động nhận diện chính xác câu hỏi và đáp án khi bạn tải lên môn học mới:
+1. Mỗi câu hỏi bắt đầu bằng chữ `"Câu "` kèm số thứ tự (Ví dụ: `Câu 1:`, `Câu 2 [DE]:`).
+2. Các phương án trả lời phân cách bằng ký tự đặc biệt `[<$>]` ở đầu dòng.
+3. Đáp án chính xác của câu đó phải được bôi màu chữ đỏ nguyên bản (`FF0000`) trong file Word.
 
-1. **Từ khóa câu hỏi**: Bắt đầu bằng từ khóa `"Câu "` kèm số thứ tự ở đầu mỗi câu (Ví dụ: `Câu 1:`, `Câu 2 [DE]:`).
-2. **Ký hiệu phân tách đáp án**: Thay thế các ký tự lựa chọn phương án bằng ký hiệu `[<$>]` (Ví dụ: `[<$>] Đáp án A`, `[<$>] Đáp án B`).
-3. **Đánh dấu đáp án đúng**: Bôi màu đỏ chữ (mã màu RGB đỏ chuẩn: `FF0000`) cho đáp án chính xác hoặc ký hiệu `[<$>]` của đáp án đó.
-
-**Ví dụ định dạng chuẩn trong file Word:**
-> **Câu 1**: Đâu là định nghĩa đúng về tương tác Người - Máy?
+**Ví dụ cấu trúc trong file Word:**
+> **Câu 1**: Tương tác Người - Máy là gì?
 > `[<$>]` Là nghiên cứu về thiết bị phần cứng.
 > `[<$>]` Là nghiên cứu thiết kế giao diện giữa con người và máy tính (Chữ dòng này được bôi màu đỏ trong Word)
 > `[<$>]` Là lập trình ứng dụng cơ sở dữ liệu.
+
