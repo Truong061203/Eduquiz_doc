@@ -716,9 +716,31 @@ function renderChapterList() {
     
     const pct = Math.round((answeredInCh / ch.total) * 100);
     
+    // Calculate the sub-parts
+    const PART_SIZE = 30;
+    const numParts = Math.ceil(ch.total / PART_SIZE);
+    
+    let partsButtonsHtml = '';
+    
+    // Add "Practice all" button
+    partsButtonsHtml += `
+      <button class="btn-part btn-part-all" data-part="all">
+        Luyện tất cả
+      </button>
+    `;
+    
+    for (let p = 1; p <= numParts; p++) {
+      const startNum = (p - 1) * PART_SIZE + 1;
+      const endNum = Math.min(p * PART_SIZE, ch.total);
+      partsButtonsHtml += `
+        <button class="btn-part" data-part="${p}">
+          Phần ${p} (${startNum}-${endNum})
+        </button>
+      `;
+    }
+    
     const card = document.createElement('div');
     card.className = 'chapter-card';
-    card.addEventListener('click', () => startPractice('chapter', ch.id));
     
     card.innerHTML = `
       <div class="chapter-info">
@@ -734,17 +756,34 @@ function renderChapterList() {
           <span class="chapter-percent">${pct}%</span>
         </div>
       </div>
-      <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
-        <button class="btn btn-secondary btn-sm btn-start-practice">
-          Luyện tập <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-left:4px;"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-        </button>
-        ${answeredInCh > 0 ? `
-          <button class="btn btn-secondary btn-sm btn-reset-chapter" title="Làm lại chương này">
-            Làm lại chương
-          </button>
-        ` : ''}
+      
+      <div class="chapter-parts-wrapper">
+        <div class="chapter-parts-header-row">
+          <span class="chapter-parts-title">Chọn phần luyện tập:</span>
+          ${answeredInCh > 0 ? `
+            <button class="btn-reset-chapter" title="Làm lại chương này">
+              Làm lại chương
+            </button>
+          ` : ''}
+        </div>
+        <div class="chapter-parts-buttons">
+          ${partsButtonsHtml}
+        </div>
       </div>
     `;
+    
+    // Click listeners for parts
+    card.querySelectorAll('.btn-part').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const partVal = btn.getAttribute('data-part');
+        if (partVal === 'all') {
+          startPractice('chapter', ch.id);
+        } else {
+          startPractice('chapter', ch.id, parseInt(partVal));
+        }
+      });
+    });
     
     const resetBtn = card.querySelector('.btn-reset-chapter');
     if (resetBtn) {
@@ -767,16 +806,28 @@ function renderChapterList() {
 // ==========================================================================
 // Start Quiz Functions
 // ==========================================================================
-function startPractice(type, key) {
+function startPractice(type, key, partNum) {
   state.quizMode = 'study';
   document.getElementById('exam-timer-wrapper').classList.add('hide');
   document.getElementById('btn-submit-exam').classList.add('hide');
   
   if (type === 'chapter') {
-    state.activeQuestions = state.questions.filter(q => q.chapter === key);
+    const allChQuestions = state.questions.filter(q => q.chapter === key);
     const chMeta = getChaptersMeta().find(c => c.id === key);
-    state.activeSourceName = chMeta ? chMeta.name : `Chương ${key}`;
-    state.activeSource = `chapter-${key}`;
+    const chName = chMeta ? chMeta.name : `Chương ${key}`;
+    
+    if (partNum) {
+      const PART_SIZE = 30;
+      const startIdx = (partNum - 1) * PART_SIZE;
+      const endIdx = startIdx + PART_SIZE;
+      state.activeQuestions = allChQuestions.slice(startIdx, endIdx);
+      state.activeSourceName = `${chName} - Phần ${partNum}`;
+      state.activeSource = `chapter-${key}-part-${partNum}`;
+    } else {
+      state.activeQuestions = allChQuestions;
+      state.activeSourceName = chName;
+      state.activeSource = `chapter-${key}`;
+    }
   } else if (type === 'marathon') {
     state.activeQuestions = [...state.questions];
     state.activeSourceName = 'Marathon 690 Câu';
