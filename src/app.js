@@ -185,6 +185,10 @@ function getQuestionExplanation(q) {
   return explanationHtml;
 }
 
+function getQuestionKey(q) {
+  return `${q.chapter}_${q.header}`;
+}
+
 // ==========================================================================
 // Application State
 // ==========================================================================
@@ -246,6 +250,48 @@ function loadProgress() {
       if (!state.userHistory.answers) state.userHistory.answers = {};
       if (!state.userHistory.bookmarks) state.userHistory.bookmarks = [];
       if (state.userHistory.examsTakenCount === undefined) state.userHistory.examsTakenCount = 0;
+      
+      // Migrate old non-unique keys to new unique format (${chapter}_${header})
+      let migrated = false;
+      const oldAnswers = state.userHistory.answers;
+      const newAnswers = {};
+      
+      for (const oldKey in oldAnswers) {
+        if (!oldKey.includes('_')) {
+          const matchedQ = state.questions.find(q => q.header === oldKey);
+          if (matchedQ) {
+            newAnswers[`${matchedQ.chapter}_${matchedQ.header}`] = oldAnswers[oldKey];
+            migrated = true;
+          } else {
+            newAnswers[oldKey] = oldAnswers[oldKey];
+          }
+        } else {
+          newAnswers[oldKey] = oldAnswers[oldKey];
+        }
+      }
+      state.userHistory.answers = newAnswers;
+      
+      const oldBookmarks = state.userHistory.bookmarks;
+      const newBookmarks = [];
+      oldBookmarks.forEach(oldKey => {
+        if (typeof oldKey === 'string' && !oldKey.includes('_')) {
+          const matchedQ = state.questions.find(q => q.header === oldKey);
+          if (matchedQ) {
+            newBookmarks.push(`${matchedQ.chapter}_${matchedQ.header}`);
+            migrated = true;
+          } else {
+            newBookmarks.push(oldKey);
+          }
+        } else {
+          newBookmarks.push(oldKey);
+        }
+      });
+      state.userHistory.bookmarks = newBookmarks;
+      
+      if (migrated) {
+        // Save the migrated history
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state.userHistory));
+      }
     } catch (e) {
       console.error('Error parsing stored progress', e);
     }
@@ -653,14 +699,13 @@ function renderChapterList() {
   getChaptersMeta().forEach(ch => {
     // Calculate statistics for this specific chapter
     const chQuestions = state.questions.filter(q => q.chapter === ch.id);
-    const chQuestionHeaders = new Set(chQuestions.map(q => q.header));
     
     // Find how many of these are in history
     let answeredInCh = 0;
     let correctInCh = 0;
     
     chQuestions.forEach(q => {
-      const record = state.userHistory.answers[q.header];
+      const record = state.userHistory.answers[getQuestionKey(q)];
       if (record) {
         answeredInCh++;
         if (record.isCorrect) {
@@ -707,7 +752,7 @@ function renderChapterList() {
         e.stopPropagation(); // Ngăn click lan tới card làm bắt đầu luyện tập
         if (confirm(`Bạn có chắc chắn muốn làm lại toàn bộ câu hỏi trong "${ch.name}" không?`)) {
           chQuestions.forEach(q => {
-            delete state.userHistory.answers[q.header];
+            delete state.userHistory.answers[getQuestionKey(q)];
           });
           saveProgress();
           renderChapterList();
@@ -737,13 +782,13 @@ function startPractice(type, key) {
     state.activeSourceName = 'Marathon 690 Câu';
     state.activeSource = 'marathon';
   } else if (type === 'bookmarks') {
-    state.activeQuestions = state.questions.filter(q => state.userHistory.bookmarks.includes(q.header));
+    state.activeQuestions = state.questions.filter(q => state.userHistory.bookmarks.includes(getQuestionKey(q)));
     state.activeSourceName = 'Câu hỏi đã đánh dấu';
     state.activeSource = 'bookmarks';
   } else if (type === 'incorrects') {
     // Collect all incorrect questions based on current userHistory
-    const incorrectHeaders = Object.keys(state.userHistory.answers).filter(header => !state.userHistory.answers[header].isCorrect);
-    state.activeQuestions = state.questions.filter(q => incorrectHeaders.includes(q.header));
+    const incorrectKeys = Object.keys(state.userHistory.answers).filter(key => !state.userHistory.answers[key].isCorrect);
+    state.activeQuestions = state.questions.filter(q => incorrectKeys.includes(getQuestionKey(q)));
     state.activeSourceName = 'Câu làm sai gần đây';
     state.activeSource = 'incorrects';
   }
@@ -826,7 +871,7 @@ function renderQuestion() {
   else difficultyBadge.classList.add('badge-danger');
   
   // Bookmark button state
-  const isBookmarked = state.userHistory.bookmarks.includes(q.header);
+  const isBookmarked = state.userHistory.bookmarks.includes(getQuestionKey(q));
   const bookmarkBtn = document.getElementById('btn-bookmark-toggle');
   const outlineBookmark = bookmarkBtn.querySelector('.bookmark-outline');
   const filledBookmark = bookmarkBtn.querySelector('.bookmark-filled');
@@ -854,7 +899,7 @@ function renderQuestion() {
   
   if (state.quizMode === 'study') {
     // Read from persistent history
-    const hist = state.userHistory.answers[q.header];
+    const hist = state.userHistory.answers[getQuestionKey(q)];
     if (hist) {
       hasBeenAnswered = true;
       userSelectedIdx = hist.selectedIndex;
@@ -909,7 +954,7 @@ function renderQuestion() {
         if (hasBeenAnswered) return; // Can't change answer in study mode once clicked
         
         const isCorrect = opt.is_correct;
-        state.userHistory.answers[q.header] = {
+        state.userHistory.answers[getQuestionKey(q)] = {
           selectedIndex: idx,
           isCorrect: isCorrect
         };
@@ -964,9 +1009,10 @@ function toggleBookmark() {
   if (state.activeQuestions.length === 0) return;
   const q = state.activeQuestions[state.currentQuestionIndex];
   
-  const bIndex = state.userHistory.bookmarks.indexOf(q.header);
+  const qKey = getQuestionKey(q);
+  const bIndex = state.userHistory.bookmarks.indexOf(qKey);
   if (bIndex === -1) {
-    state.userHistory.bookmarks.push(q.header);
+    state.userHistory.bookmarks.push(qKey);
   } else {
     state.userHistory.bookmarks.splice(bIndex, 1);
   }
@@ -1014,13 +1060,13 @@ function setGridItemState(gridItem, q, idx) {
     gridItem.classList.add('current');
   }
   
-  const isBookmarked = state.userHistory.bookmarks.includes(q.header);
+  const isBookmarked = state.userHistory.bookmarks.includes(getQuestionKey(q));
   if (isBookmarked) {
     gridItem.classList.add('flagged');
   }
   
   if (state.quizMode === 'study') {
-    const record = state.userHistory.answers[q.header];
+    const record = state.userHistory.answers[getQuestionKey(q)];
     if (record) {
       gridItem.classList.add(record.isCorrect ? 'correct' : 'wrong');
     }
@@ -1104,7 +1150,7 @@ function submitExam() {
     if (userAnsIdx === undefined) {
       skippedCount++;
       // Record in history as incorrect since it's skipped
-      state.userHistory.answers[q.header] = {
+      state.userHistory.answers[getQuestionKey(q)] = {
         selectedIndex: -1,
         isCorrect: false
       };
@@ -1119,7 +1165,7 @@ function submitExam() {
       }
       
       // Update persistent history
-      state.userHistory.answers[q.header] = {
+      state.userHistory.answers[getQuestionKey(q)] = {
         selectedIndex: userAnsIdx,
         isCorrect: isCorrect
       };
@@ -1237,7 +1283,7 @@ function initEventListeners() {
       const q = state.activeQuestions[state.currentQuestionIndex];
       
       // Delete user answer for this question
-      delete state.userHistory.answers[q.header];
+      delete state.userHistory.answers[getQuestionKey(q)];
       saveProgress();
       
       // Re-render
@@ -1261,7 +1307,7 @@ function initEventListeners() {
         if (state.quizMode === 'study') {
           // Delete persistent history for all active questions
           state.activeQuestions.forEach(q => {
-            delete state.userHistory.answers[q.header];
+            delete state.userHistory.answers[getQuestionKey(q)];
           });
           saveProgress();
         } else {
