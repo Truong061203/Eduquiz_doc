@@ -26,31 +26,60 @@ HCI EduQuiz là một ứng dụng Web trắc nghiệm offline (không cần má
 
 ---
 
-## 🛠️ Hướng dẫn cài đặt và chạy ứng dụng
+## 🛠️ Hướng dẫn cài đặt, vận hành và chia sẻ cho bạn bè
 
-### Yêu cầu hệ thống
+Dự án này được tối ưu hóa để có thể chạy cực kỳ linh hoạt. Dưới đây là hướng dẫn chi tiết dành cho cả bạn bè của bạn (không biết gì về lập trình) và nhà phát triển:
+
+---
+
+### 🌟 DÀNH CHO BẠN BÈ (Không cần cài đặt, không cần biết lập trình)
+
+Nếu bạn muốn chia sẻ ứng dụng này cho bạn bè học cùng mà họ không biết lập trình hay chạy dòng lệnh, bạn có hai cách cực kỳ đơn giản sau:
+
+#### Cách 1: Chạy online qua GitHub Pages (KHUYÊN DÙNG - Đơn giản nhất)
+Bạn có thể tự kích hoạt tính năng chạy online miễn phí của GitHub để gửi đường link web cho bạn bè mở trên điện thoại hoặc máy tính:
+1. Trên trang kho lưu trữ GitHub của bạn (`Eduquiz_doc`), bấm vào mục **Settings** (Cài đặt) ở trên cùng.
+2. Tại danh sách bên trái, chọn mục **Pages**.
+3. Tại phần **Build and deployment** -> mục **Branch**, bạn chuyển từ `None` sang **`main`** (thư mục `/ (root)` giữ nguyên) rồi bấm **Save**.
+4. Chờ khoảng 1 - 2 phút, trang sẽ hiện ra đường link web hoạt động của bạn dạng: `https://ten-tai-khoan.github.io/Eduquiz_doc/`.
+5. Bạn chỉ cần gửi đường link này cho bạn bè. Họ có thể click mở học ôn thi ngay lập tức trên mọi thiết bị.
+
+#### Cách 2: Đóng gói gửi file chạy Offline
+Nếu bạn muốn gửi trọn bộ phần mềm chạy offline trực tiếp trên máy tính của bạn bè:
+1. Bạn chạy lệnh build trên máy của bạn (Xem phần *Dành cho nhà phát triển* ở dưới).
+2. Nén thư mục `dist/` vừa sinh ra thành file `.zip` và gửi cho bạn bè.
+3. Bạn bè giải nén ra máy tính của họ.
+4. Để tránh các lỗi bảo mật về CORS của một số trình duyệt khi mở file cục bộ, họ chỉ cần:
+   * **Cách đơn giản**: Cài đặt extension **Live Server** trong VS Code và bấm *Go Live*.
+   * **Hoặc**: Mở trực tiếp file `index.html` trong thư mục `dist` bằng trình duyệt Firefox (Firefox hỗ trợ mở module trực tiếp từ file:// mà không bị chặn bảo mật như Chrome/Safari).
+
+---
+
+### 💻 DÀNH CHO NHÀ PHÁT TRIỂN (Chạy code và chỉnh sửa dưới local)
+
+#### Yêu cầu hệ thống
 * Máy tính đã cài đặt **Node.js** (Khuyến nghị phiên bản 18 trở lên).
 
-### Bước 1: Cài đặt các thư viện (Dependencies)
-Mở terminal tại thư mục dự án (`eduquiz/`) và chạy lệnh sau để cài đặt các thư viện cần thiết:
+#### Bước 1: Cài đặt các thư viện (Dependencies)
+Mở terminal tại thư mục dự án (`eduquiz/`) và chạy lệnh sau:
 ```bash
 npm install
 ```
 
-### Bước 2: Chạy ứng dụng ở chế độ nhà phát triển (Development)
+#### Bước 2: Chạy ứng dụng ở chế độ phát triển (Development)
 Khởi động máy chủ xem trước lập trình:
 ```bash
 npm run dev
 ```
-Sau khi chạy, terminal sẽ cung cấp một liên kết cục bộ (ví dụ: `http://localhost:5173`). Anh chỉ cần mở liên kết này trên trình duyệt để sử dụng ứng dụng.
+Mở liên kết cục bộ hiển thị trên terminal (ví dụ: `http://localhost:5173`) để trải nghiệm ứng dụng.
 
-### Bước 3: Đóng gói dự án để chạy offline hoặc chia sẻ (Build Production)
-Để tạo ra phiên bản sản phẩm tĩnh siêu nhẹ để mang sang máy tính khác chạy trực tiếp không cần Node.js:
+#### Bước 3: Đóng gói dự án (Build Production)
+Tạo ra thư mục đóng gói `dist/` tối ưu hóa:
 ```bash
 npm run build
 ```
-Lệnh này sẽ tạo ra thư mục `dist/` chứa file `index.html` và các file CSS/JS đã được tối ưu hóa và nén nhỏ gọn.
-* **Cách sử dụng**: Anh chỉ cần nén thư mục `dist/` này gửi cho người khác, họ giải nén và kích đúp mở trực tiếp file `index.html` trên trình duyệt là có thể sử dụng đầy đủ các tính năng.
+
+---
 
 ---
 
