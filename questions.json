@@ -17775,6 +17775,31 @@
     "difficulty": "Chưa phân loại"
   },
   {
+    "title": "Trong JavaScript, hàm nào được dùng để cập nhật nội dung hiển thị của một phần tử HTML?",
+    "options": [
+      {
+        "text": "changeInnerHTML()",
+        "is_correct": false
+      },
+      {
+        "text": "innerHTML =",
+        "is_correct": true
+      },
+      {
+        "text": "getElementById()",
+        "is_correct": false
+      },
+      {
+        "text": "setTimeout()",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 24:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
     "title": "Tính khả dụng (usability) không bao gồm yếu tố nào sau đây?",
     "options": [
       {
@@ -17796,7 +17821,7 @@
     ],
     "chapter": 5,
     "chapter_name": "Đề số 1: Đề thi trên lớp",
-    "header": "Câu 24:",
+    "header": "Câu 25:",
     "difficulty": "Chưa phân loại"
   },
   {
@@ -17821,7 +17846,32 @@
     ],
     "chapter": 5,
     "chapter_name": "Đề số 1: Đề thi trên lớp",
-    "header": "Câu 25:",
+    "header": "Câu 26:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Một ví dụ về thiết bị đầu vào sử dụng để nhận diện chuyển động trong hệ thống HCI là:",
+    "options": [
+      {
+        "text": "Máy quét mã vạch",
+        "is_correct": false
+      },
+      {
+        "text": "Cảm biến quang học",
+        "is_correct": false
+      },
+      {
+        "text": "Màn hình cảm ứng",
+        "is_correct": false
+      },
+      {
+        "text": "Cảm biến gia tốc",
+        "is_correct": true
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 27:",
     "difficulty": "Chưa phân loại"
   },
   {
@@ -17846,7 +17896,7 @@
     ],
     "chapter": 5,
     "chapter_name": "Đề số 1: Đề thi trên lớp",
-    "header": "Câu 26:",
+    "header": "Câu 28:",
     "difficulty": "Chưa phân loại"
   },
   {
@@ -17871,7 +17921,7 @@
     ],
     "chapter": 5,
     "chapter_name": "Đề số 1: Đề thi trên lớp",
-    "header": "Câu 27:",
+    "header": "Câu 29:",
     "difficulty": "Chưa phân loại"
   },
   {
@@ -17896,7 +17946,7 @@
     ],
     "chapter": 5,
     "chapter_name": "Đề số 1: Đề thi trên lớp",
-    "header": "Câu 28:",
+    "header": "Câu 30:",
     "difficulty": "Chưa phân loại"
   },
   {
@@ -17921,7 +17971,7 @@
     ],
     "chapter": 5,
     "chapter_name": "Đề số 1: Đề thi trên lớp",
-    "header": "Câu 29:",
+    "header": "Câu 31:",
     "difficulty": "Chưa phân loại"
   },
   {
@@ -17946,7 +17996,7 @@
     ],
     "chapter": 5,
     "chapter_name": "Đề số 1: Đề thi trên lớp",
-    "header": "Câu 30:",
+    "header": "Câu 32:",
     "difficulty": "Chưa phân loại"
   },
   {
@@ -17971,7 +18021,7 @@
     ],
     "chapter": 5,
     "chapter_name": "Đề số 1: Đề thi trên lớp",
-    "header": "Câu 31:",
+    "header": "Câu 33:",
     "difficulty": "Chưa phân loại"
   },
   {
@@ -17996,7 +18046,7 @@
     ],
     "chapter": 5,
     "chapter_name": "Đề số 1: Đề thi trên lớp",
-    "header": "Câu 32:",
+    "header": "Câu 34:",
     "difficulty": "Chưa phân loại"
   },
   {
@@ -18021,7 +18071,7 @@
     ],
     "chapter": 5,
     "chapter_name": "Đề số 1: Đề thi trên lớp",
-    "header": "Câu 33:",
+    "header": "Câu 35:",
     "difficulty": "Chưa phân loại"
   },
   {
@@ -18046,7 +18096,7 @@
     ],
     "chapter": 5,
     "chapter_name": "Đề số 1: Đề thi trên lớp",
-    "header": "Câu 34:",
+    "header": "Câu 36:",
     "difficulty": "Chưa phân loại"
   },
   {
@@ -18071,7 +18121,7 @@
     ],
     "chapter": 5,
     "chapter_name": "Đề số 1: Đề thi trên lớp",
-    "header": "Câu 35:",
+    "header": "Câu 37:",
     "difficulty": "Chưa phân loại"
   },
   {
@@ -18096,7 +18146,7 @@
     ],
     "chapter": 5,
     "chapter_name": "Đề số 1: Đề thi trên lớp",
-    "header": "Câu 36:",
+    "header": "Câu 38:",
     "difficulty": "Chưa phân loại"
   },
   {
@@ -18121,7 +18171,7 @@
     ],
     "chapter": 5,
     "chapter_name": "Đề số 1: Đề thi trên lớp",
-    "header": "Câu 37:",
+    "header": "Câu 39:",
     "difficulty": "Chưa phân loại"
   },
   {
@@ -18146,7 +18196,7 @@
     ],
     "chapter": 5,
     "chapter_name": "Đề số 1: Đề thi trên lớp",
-    "header": "Câu 38:",
+    "header": "Câu 40:",
     "difficulty": "Chưa phân loại"
   }
 ]
