@@ -17198,5 +17198,955 @@ export const QUESTIONS = [
         "is_correct": false
       }
     ]
+  },
+  {
+    "title": "Chuẩn kết nối giữa HMI OP3/OP7 với OP và PLC S7 300?",
+    "options": [
+      {
+        "text": "Ethernet",
+        "is_correct": false
+      },
+      {
+        "text": "Profibus",
+        "is_correct": false
+      },
+      {
+        "text": "MPI (Multi Point Interface)",
+        "is_correct": true
+      },
+      {
+        "text": "PPI (Point to Point)",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 1:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Khi người dùng phải ghi nhớ quá nhiều thông tin cùng lúc trong hệ thống, họ đang bị ảnh hưởng bởi:",
+    "options": [
+      {
+        "text": "Giới hạn của bộ nhớ ngắn hạn",
+        "is_correct": true
+      },
+      {
+        "text": "Lỗi kỹ thuật phần mềm",
+        "is_correct": false
+      },
+      {
+        "text": "Khả năng nhìn kém",
+        "is_correct": false
+      },
+      {
+        "text": "Giới hạn về cảm xúc",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 2:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Trong HTML5, phần tử nào dùng để tạo nút nhấn?",
+    "options": [
+      {
+        "text": "<button>",
+        "is_correct": true
+      },
+      {
+        "text": "<label>",
+        "is_correct": false
+      },
+      {
+        "text": "<input type=\"checkbox\">",
+        "is_correct": false
+      },
+      {
+        "text": "<textarea>",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 3:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Thuộc tính CSS nào giúp một phần tử div tự động co giãn theo kích thước màn hình?",
+    "options": [
+      {
+        "text": "position: absolute;",
+        "is_correct": false
+      },
+      {
+        "text": "display: block;",
+        "is_correct": false
+      },
+      {
+        "text": "width: 100%; height: auto;",
+        "is_correct": true
+      },
+      {
+        "text": "align: stretch;",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 4:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Bạn xây dựng HMI web-based và cần lưu trữ dữ liệu cảm biến vào IndexedDB. Câu nào đúng về quá trình lưu?",
+    "options": [
+      {
+        "text": "Dữ liệu được lưu qua localStorage.setItem()",
+        "is_correct": false
+      },
+      {
+        "text": "Cần tạo đối tượng IDBRequest và dùng transaction",
+        "is_correct": true
+      },
+      {
+        "text": "Câu nào đúng về quá trình lưu?",
+        "is_correct": false
+      },
+      {
+        "text": "Gọi saveToDB() là đủ để lưu",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 5:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Trí nhớ ngắn hạn của con người thường có giới hạn khoảng:",
+    "options": [
+      {
+        "text": "3-5 mục thông tin",
+        "is_correct": false
+      },
+      {
+        "text": "15-20 mục thông tin",
+        "is_correct": false
+      },
+      {
+        "text": "10-15 mục thông tin",
+        "is_correct": false
+      },
+      {
+        "text": "5-9 mục thông tin",
+        "is_correct": true
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 6:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Trong CSS, thuộc tính nào được sử dụng để làm tròn các góc của phần tử?",
+    "options": [
+      {
+        "text": "border-radius",
+        "is_correct": true
+      },
+      {
+        "text": "border-round",
+        "is_correct": false
+      },
+      {
+        "text": "corner-radius",
+        "is_correct": false
+      },
+      {
+        "text": "roundness",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 7:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Chức năng \"undo\" (hoàn tác) trong hệ thống phản ánh nguyên tắc:",
+    "options": [
+      {
+        "text": "Hướng dẫn chi tiết người dùng",
+        "is_correct": false
+      },
+      {
+        "text": "Giảm tính năng để đơn giản hóa",
+        "is_correct": false
+      },
+      {
+        "text": "Cho phép người dùng kiểm soát và sửa lỗi",
+        "is_correct": true
+      },
+      {
+        "text": "Ngăn người dùng thao tác",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 8:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Lập trình giao diện người dùng với PLC bằng C/C++ cần yêu cầu tối thiểu?",
+    "options": [
+      {
+        "text": "Cấu hình máy tính mạnh",
+        "is_correct": false
+      },
+      {
+        "text": "Máy tính có cài đặt thư viện phù hợp (giao tiếp & GUI)",
+        "is_correct": true
+      },
+      {
+        "text": "PLC và máy tính có cấu hình mạnh",
+        "is_correct": false
+      },
+      {
+        "text": "PLC có nhiều cổng vào ra",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 9:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Khi một tag được sử dụng trong nhiều đối tượng giao diện HMI, điều quan trọng cần đảm bảo là:",
+    "options": [
+      {
+        "text": "Tag được chia sẻ và đồng bộ giá trị trên toàn bộ phần mềm",
+        "is_correct": true
+      },
+      {
+        "text": "Mỗi đối tượng có một bản sao riêng của tag",
+        "is_correct": false
+      },
+      {
+        "text": "Tag chỉ cập nhật khi khởi động",
+        "is_correct": false
+      },
+      {
+        "text": "Đặt tên tag trùng nhau",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 10:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Để giảm thiểu độ trễ khi truyền tải dữ liệu cảm biến trong thời gian thực, bạn nên:",
+    "options": [
+      {
+        "text": "Dùng SessionStorage thay vì LocalStorage",
+        "is_correct": false
+      },
+      {
+        "text": "Chuyển sang HTTP truyền thống",
+        "is_correct": false
+      },
+      {
+        "text": "Sử dụng WebSocket với chế độ nén dữ liệu",
+        "is_correct": true
+      },
+      {
+        "text": "Tăng độ phân giải của cảm biến",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 11:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "\"Visibility\" trong HCI có nghĩa là:",
+    "options": [
+      {
+        "text": "Khả năng bảo mật",
+        "is_correct": false
+      },
+      {
+        "text": "Giao diện đẹp",
+        "is_correct": false
+      },
+      {
+        "text": "Mức độ hiển thị các chức năng có thể sử dụng",
+        "is_correct": true
+      },
+      {
+        "text": "Độ sáng của màn hình",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 12:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "\"Persona\" trong HCI là:",
+    "options": [
+      {
+        "text": "Tên gọi khác của thiết bị nhập",
+        "is_correct": false
+      },
+      {
+        "text": "Nhân vật tưởng tượng đại diện cho nhóm người dùng mục tiêu",
+        "is_correct": true
+      },
+      {
+        "text": "Một loại phần mềm đồ họa",
+        "is_correct": false
+      },
+      {
+        "text": "Một kỹ thuật lập trình",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 13:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Trong HCI, \"mental model\" (mô hình tinh thần) là:",
+    "options": [
+      {
+        "text": "Một phần mềm mô phỏng tương tác",
+        "is_correct": false
+      },
+      {
+        "text": "Thiết kế giao diện theo tâm lý học màu sắc",
+        "is_correct": false
+      },
+      {
+        "text": "Cách người dùng tưởng tượng cách hệ thống hoạt động",
+        "is_correct": true
+      },
+      {
+        "text": "Một loại mô hình đồ họa",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 14:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "“Cognitive load” là:",
+    "options": [
+      {
+        "text": "Dung lượng bộ nhớ máy tính",
+        "is_correct": false
+      },
+      {
+        "text": "Tốc độ xử lý của hệ thống",
+        "is_correct": false
+      },
+      {
+        "text": "Trình độ lập trình viên",
+        "is_correct": false
+      },
+      {
+        "text": "Lượng thông tin người dùng phải xử lý",
+        "is_correct": true
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 15:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Thuộc tính nào trong JavaScript được dùng để tạo kết nối WebSocket?",
+    "options": [
+      {
+        "text": "WebSocket.create()",
+        "is_correct": false
+      },
+      {
+        "text": "WebSocket.connect()",
+        "is_correct": false
+      },
+      {
+        "text": "new Connection()",
+        "is_correct": false
+      },
+      {
+        "text": "new WebSocket()",
+        "is_correct": true
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 16:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Một ứng dụng HMI nên sử dụng HTTPS thay vì HTTP để:",
+    "options": [
+      {
+        "text": "Hỗ trợ cảm biến tốt hơn",
+        "is_correct": false
+      },
+      {
+        "text": "Bảo mật truyền thông",
+        "is_correct": true
+      },
+      {
+        "text": "Hiển thị hình ảnh đẹp hơn",
+        "is_correct": false
+      },
+      {
+        "text": "Tăng tốc độ kết nối",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 17:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Mô hình nào mô tả sự tương tác giữa người dùng và hệ thống?",
+    "options": [
+      {
+        "text": "Mô hình Gulfs of Execution and Evaluation",
+        "is_correct": true
+      },
+      {
+        "text": "Mô hình mạng",
+        "is_correct": false
+      },
+      {
+        "text": "Mô hình vòng lặp",
+        "is_correct": false
+      },
+      {
+        "text": "Mô hình tháp",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 18:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Trong HCI, thiết kế phản hồi tốt có nghĩa là:",
+    "options": [
+      {
+        "text": "Hệ thống im lặng khi có lỗi xảy ra",
+        "is_correct": false
+      },
+      {
+        "text": "Chi hiển thị thông báo khi hoàn thành tác vụ",
+        "is_correct": false
+      },
+      {
+        "text": "Cung cấp thông tin chính xác, rõ ràng sau mỗi hành động của người dùng",
+        "is_correct": true
+      },
+      {
+        "text": "Tắt ứng dụng khi người dùng thao tác sai",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 19:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "HMI GT2507T-WTSD là HMI của hãng nào?",
+    "options": [
+      {
+        "text": "Weintek",
+        "is_correct": false
+      },
+      {
+        "text": "Delta",
+        "is_correct": false
+      },
+      {
+        "text": "Siemens",
+        "is_correct": false
+      },
+      {
+        "text": "Mitsubishi",
+        "is_correct": true
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 20:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Khi sử dụng cảm biến từ xa trong một ứng dụng HMI web, làm thế nào để giảm độ trễ khi truyền tải dữ liệu?",
+    "options": [
+      {
+        "text": "Sử dụng WebSocket thay vì HTTP",
+        "is_correct": true
+      },
+      {
+        "text": "Đảm bảo ứng dụng sử dụng HTTP 2.0",
+        "is_correct": false
+      },
+      {
+        "text": "Tăng độ phân giải cảm biến",
+        "is_correct": false
+      },
+      {
+        "text": "Giảm tốc độ gửi dữ liệu cảm biến",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 21:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Kỹ thuật đánh giá nào sau đây KHÔNG phổ biến trong HCI?",
+    "options": [
+      {
+        "text": "Đo tốc độ CPU",
+        "is_correct": true
+      },
+      {
+        "text": "Quan sát hành vi người dùng",
+        "is_correct": false
+      },
+      {
+        "text": "Phỏng vấn người dùng",
+        "is_correct": false
+      },
+      {
+        "text": "Khảo sát",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 22:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Giao diện tốt cần sử dụng từ ngữ:",
+    "options": [
+      {
+        "text": "Chuyên ngành và kỹ thuật",
+        "is_correct": false
+      },
+      {
+        "text": "Gần gũi, dễ hiểu với người dùng",
+        "is_correct": true
+      },
+      {
+        "text": "Dài dòng, chi tiết kỹ thuật",
+        "is_correct": false
+      },
+      {
+        "text": "Mang tính ẩn dụ cao",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 23:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Tính khả dụng (usability) không bao gồm yếu tố nào sau đây?",
+    "options": [
+      {
+        "text": "Tính dễ nhớ",
+        "is_correct": false
+      },
+      {
+        "text": "Tính dễ học",
+        "is_correct": false
+      },
+      {
+        "text": "Tính hiệu quả",
+        "is_correct": false
+      },
+      {
+        "text": "Tính sáng tạo của lập trình viên",
+        "is_correct": true
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 24:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Lập trình giao diện người dùng (GUI) để giao tiếp với PLC hỗ trợ Modbus bằng C/C++ thường sử dụng thư viện có sẵn nào?",
+    "options": [
+      {
+        "text": "Libmodbus",
+        "is_correct": true
+      },
+      {
+        "text": "Tự viết hoặc thư viện bên thứ 3",
+        "is_correct": false
+      },
+      {
+        "text": "Snap7",
+        "is_correct": false
+      },
+      {
+        "text": "Libmodbus hoặc EasyComm",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 25:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Hệ thống \"Virtual Reality\" (VR) trong HCI có thể được áp dụng trong lĩnh vực nào dưới đây?",
+    "options": [
+      {
+        "text": "Tạo ra các trải nghiệm học tập mô phỏng giúp người dùng tương tác với thế giới ảo",
+        "is_correct": true
+      },
+      {
+        "text": "Cung cấp các ứng dụng chỉ với giao diện 2D",
+        "is_correct": false
+      },
+      {
+        "text": "Cải thiện khả năng nhìn thấy trong môi trường thực",
+        "is_correct": false
+      },
+      {
+        "text": "Tăng tốc độ truy cập Internet",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 26:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "WebSocket là giao thức sử dụng cho:",
+    "options": [
+      {
+        "text": "Truyền tải dữ liệu qua UDP",
+        "is_correct": false
+      },
+      {
+        "text": "Cung cấp giao tiếp hai chiều giữa client và server",
+        "is_correct": true
+      },
+      {
+        "text": "Kết nối HTTP không đồng bộ",
+        "is_correct": false
+      },
+      {
+        "text": "Truyền tải dữ liệu một chiều giữa client và server",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 27:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Nguyên tắc thiết kế giao diện “dễ tiếp cận” (accessibility) có nghĩa là:",
+    "options": [
+      {
+        "text": "Giao diện chỉ sử dụng các tính năng cơ bản",
+        "is_correct": false
+      },
+      {
+        "text": "Giao diện chỉ dành cho người sử dụng máy tính chuyên nghiệp",
+        "is_correct": false
+      },
+      {
+        "text": "Giao diện cần phải rất phức tạp để nâng cao tính bảo mật",
+        "is_correct": false
+      },
+      {
+        "text": "Giao diện cần đáp ứng nhu cầu của tất cả người dùng, bao gồm người khuyết tật",
+        "is_correct": true
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 28:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Cảm biến nào trong số các cảm biến dưới đây có thể được sử dụng để nhận diện các hành động cử chỉ tay?",
+    "options": [
+      {
+        "text": "Cảm biến gia tốc",
+        "is_correct": false
+      },
+      {
+        "text": "Cảm biến quang học",
+        "is_correct": true
+      },
+      {
+        "text": "Cảm biến vân tay",
+        "is_correct": false
+      },
+      {
+        "text": "Cảm biến chuyển động",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 29:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Điều nào sau đây giúp người dùng giảm gánh nặng trí nhớ ngắn hạn khi dùng giao diện?",
+    "options": [
+      {
+        "text": "Bắt buộc nhớ tất cả các bước thao tác",
+        "is_correct": false
+      },
+      {
+        "text": "Yêu cầu nhớ nhiều mã lệnh",
+        "is_correct": false
+      },
+      {
+        "text": "Chỉ cung cấp hướng dẫn một lần duy nhất",
+        "is_correct": false
+      },
+      {
+        "text": "Hiển thị thông tin liên quan ngay tại nơi cần thiết",
+        "is_correct": true
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 30:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Thư viện JavaScript nào sau đây hữu ích cho việc tạo biểu đồ thời gian thực trong HMI?",
+    "options": [
+      {
+        "text": "Bootstrap",
+        "is_correct": false
+      },
+      {
+        "text": "jQuery UI",
+        "is_correct": false
+      },
+      {
+        "text": "Tailwind CSS",
+        "is_correct": false
+      },
+      {
+        "text": "Chart.js",
+        "is_correct": true
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 31:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Trong giao diện HMI với HTML5/CSS, để đảm bảo tương thích với nhiều thiết bị, thuộc tính CSS nào cần được sử dụng?",
+    "options": [
+      {
+        "text": "width: 1280px;",
+        "is_correct": false
+      },
+      {
+        "text": "position: fixed;",
+        "is_correct": false
+      },
+      {
+        "text": "float: left;",
+        "is_correct": false
+      },
+      {
+        "text": "max-width: 100%; và media queries",
+        "is_correct": true
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 32:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Để hiển thị giá trị trên HMI OP3/OP7, đối tượng sử dụng là:",
+    "options": [
+      {
+        "text": "Output fields",
+        "is_correct": true
+      },
+      {
+        "text": "Function keys (F1-F8)",
+        "is_correct": false
+      },
+      {
+        "text": "Text fields",
+        "is_correct": false
+      },
+      {
+        "text": "Input fields",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 33:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Giao diện trên máy tính liên kết với nhiều bộ điều khiển PLC, các PLC này được phân biệt với nhau thông qua?",
+    "options": [
+      {
+        "text": "Vị trí lắp đặt",
+        "is_correct": false
+      },
+      {
+        "text": "Kích thước",
+        "is_correct": false
+      },
+      {
+        "text": "Hãng sản xuất",
+        "is_correct": false
+      },
+      {
+        "text": "Địa chỉ mạng",
+        "is_correct": true
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 34:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Phương thức JavaScript nào giúp gửi dữ liệu đến server qua WebSocket?",
+    "options": [
+      {
+        "text": "push()",
+        "is_correct": false
+      },
+      {
+        "text": "emit()",
+        "is_correct": false
+      },
+      {
+        "text": "send()",
+        "is_correct": true
+      },
+      {
+        "text": "post()",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 35:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Để hỗ trợ người dùng khiếm thị trong HCI, việc sử dụng phần mềm đọc màn hình có thể làm gì?",
+    "options": [
+      {
+        "text": "Giảm số lượng văn bản trên giao diện",
+        "is_correct": false
+      },
+      {
+        "text": "Cung cấp thông tin bằng âm thanh thay vì hình ảnh",
+        "is_correct": true
+      },
+      {
+        "text": "Tăng cường sự xuất hiện của hình ảnh động",
+        "is_correct": false
+      },
+      {
+        "text": "Giảm độ sáng của màn hình",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 36:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Cảm biến nhiệt độ có thể được truy cập thông qua sự kiện:",
+    "options": [
+      {
+        "text": "deviceorientationchange",
+        "is_correct": false
+      },
+      {
+        "text": "devicetemperature",
+        "is_correct": true
+      },
+      {
+        "text": "deviceorientation",
+        "is_correct": false
+      },
+      {
+        "text": "devicelight",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 37:",
+    "difficulty": "Chưa phân loại"
+  },
+  {
+    "title": "Để cập nhật nhanh giá trị sensor hiển thị trong HMI HTML5, hàm nào của WebSocket thường được sử dụng?",
+    "options": [
+      {
+        "text": "onclose()",
+        "is_correct": false
+      },
+      {
+        "text": "onmessage()",
+        "is_correct": true
+      },
+      {
+        "text": "onerror()",
+        "is_correct": false
+      },
+      {
+        "text": "onopen()",
+        "is_correct": false
+      }
+    ],
+    "chapter": 5,
+    "chapter_name": "Đề số 1: Đề thi trên lớp",
+    "header": "Câu 38:",
+    "difficulty": "Chưa phân loại"
   }
 ];

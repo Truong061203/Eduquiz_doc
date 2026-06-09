@@ -317,7 +317,7 @@ function resetAllProgress() {
 }
 
 function restoreDefaultQuestions() {
-  if (confirm('Bạn có chắc chắn muốn khôi phục lại bộ câu hỏi gốc (690 câu) của chương trình? Bộ câu hỏi tự nạp sẽ bị xóa khỏi bộ nhớ.')) {
+  if (confirm(`Bạn có chắc chắn muốn khôi phục lại bộ câu hỏi gốc (${QUESTIONS.length} câu) của chương trình? Bộ câu hỏi tự nạp sẽ bị xóa khỏi bộ nhớ.`)) {
     localStorage.removeItem(CUSTOM_QUESTIONS_KEY);
     state.questions = QUESTIONS;
     document.getElementById('btn-restore-default').classList.add('hide');
@@ -664,6 +664,12 @@ function updateDashboardStats() {
   const countIncorrectsSpan = document.getElementById('incorrect-count-btn');
   countIncorrectsSpan.textContent = incorrectCount;
   btnIncorrects.disabled = incorrectCount === 0;
+
+  // Update marathon card dynamically
+  const marathonTitle = document.querySelector('.marathon-card h4');
+  if (marathonTitle) marathonTitle.textContent = `Marathon ${totalQuestions} câu`;
+  const marathonDesc = document.querySelector('.marathon-card p');
+  if (marathonDesc) marathonDesc.textContent = `Luyện tập liên tục không giới hạn tất cả ${totalQuestions} câu hỏi trong bộ đề để đạt điểm tối đa.`;
 }
 
 // ==========================================================================
@@ -830,7 +836,7 @@ function startPractice(type, key, partNum) {
     }
   } else if (type === 'marathon') {
     state.activeQuestions = [...state.questions];
-    state.activeSourceName = 'Marathon 690 Câu';
+    state.activeSourceName = `Marathon ${state.questions.length} Câu`;
     state.activeSource = 'marathon';
   } else if (type === 'bookmarks') {
     state.activeQuestions = state.questions.filter(q => state.userHistory.bookmarks.includes(getQuestionKey(q)));
